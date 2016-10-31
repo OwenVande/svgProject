@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="svg.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <!-- page content -->
+    <h1>SVG Animation</h1>
+    <svg width="100%" viewBox="0 0 200 90" style="background-color: white">
+      <!--Sky-->
+      <rect x="0" y="0" width="200" height="90" fill="LightBlue">
+        <animate id="brightSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5s" begin="0s;darkSky.end"/>
+        <animate id="darkSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5s" begin="brightSky.end"/>
+      </rect>
+      <!--Sun-->
+      <circle cx="10" cy="52" r="13" fill="Yellow">
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="0 60 70"
+                          to="360 150 70"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+      </circle>
+      <!--Moon-->
+      <circle cx="190" cy="57" r="13" fill="LightSlateGrey">
+        <animateTransform attributeName="transform"
+                          attributeType="XML"
+                          type="rotate"
+                          from="0 60 70"
+                          to="360 110 100"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+      </circle>
+      <!--Right Hill-->
+      <circle cx="20" cy="100" r="45" fill="LawnGreen"/>
+      <circle cx="100" cy="100" r="45" fill="LawnGreen"/>
+      <circle cx="180" cy="100" r="45" fill="LawnGreen"/>
+
+    </svg>
+  </body>
+</html>
