@@ -10,9 +10,15 @@
     <svg width="100%" viewBox="0 0 200 90" style="background-color: white">
       <!--Sky-->
       <rect x="0" y="0" width="200" height="90" fill="LightBlue">
-        <animate id="brightSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5s" begin="0s;darkSky.end"/>
-        <animate id="darkSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5s" begin="brightSky.end"/>
+        <animate id="darkSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5s" begin="2;brightSky.end"/>
+        <animate id="brightSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5s" begin="darkSky.end"/>
       </rect>
+      <!--star-->
+      <image x="200" y="5" width="5" height="5" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="x" from="200" to="1" dur="4" begin="5"/>
+        <animate attributeName="y" from="5" to="20" dur="4" begin="5"/>
+        <animate attributeName="opacity" from="0" to="1" dur="1" fill="freeze" begin="5"/>
+      </image>
       <!--Sun-->
       <circle cx="10" cy="52" r="13" fill="Yellow">
         <animateTransform attributeName="transform"
@@ -33,11 +39,25 @@
                           dur="10s"
                           repeatCount="indefinite"/>
       </circle>
+      <!--Cloud-->
+      <defs>
+        <clipPath>
+          <rect/>
+        </clipPath>
+      </defs>
+      <circle cx="150" cy="20" r="4" fill="white"/>
       <!--Right Hill-->
       <circle cx="20" cy="100" r="45" fill="LawnGreen"/>
+      <!--Center Hill-->
       <circle cx="100" cy="100" r="45" fill="LawnGreen"/>
+      <!--Left Hill-->
       <circle cx="180" cy="100" r="45" fill="LawnGreen"/>
-
+      <!--Flower-->
+      <rect x="19.5" y="80" width="1" height="3" fill="Green">
+        <animate attributeName="height" from="3" to="5" dur="6" begin="click" fill="freeze"/>
+      </rect>
+      <circle cx="20" cy="80" r="2" fill="red"/>
+      <circle cx="20" cy="80" r="1" fill="yellow"/>
     </svg>
   </body>
 </html>
