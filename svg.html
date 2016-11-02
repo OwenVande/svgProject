@@ -13,10 +13,46 @@
         <animate id="darkSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5s" begin="2;brightSky.end"/>
         <animate id="brightSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5s" begin="darkSky.end"/>
       </rect>
-      <!--star-->
+      <!--stars-->
+      <image x="5" y="10" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate id="starOn" attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate id="starOff" attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate id="starGone" attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <image x="40" y="30" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <image x="80" y="5" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <image x="100" y="45" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <image x="130" y="20" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <image x="170" y="35" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <image x="190" y="15" width="2" height="2" href="star_PNG1585.png" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="2.5" begin="5;starGone.end"/>
+        <animate attributeName="opacity" from="1" to="0" dur="2.5" begin="starOn.end"/>
+        <animate attributeName="opacity" from="0" to="0" dur="5" begin="starOff.end"/>
+      </image>
+      <!--shooting star-->
       <image x="200" y="5" width="5" height="5" href="star_PNG1585.png" opacity="0">
-        <animate attributeName="x" from="200" to="1" dur="4" begin="5"/>
-        <animate attributeName="y" from="5" to="20" dur="4" begin="5"/>
+        <animate attributeName="x" from="200" to="0" dur="4" begin="5"/>
+        <animate attributeName="y" from="3" to="20" dur="4" begin="5"/>
         <animate attributeName="opacity" from="0" to="1" dur="1" fill="freeze" begin="5"/>
       </image>
       <!--Sun-->
@@ -40,12 +76,15 @@
                           repeatCount="indefinite"/>
       </circle>
       <!--Cloud-->
-      <defs>
-        <clipPath>
-          <rect/>
-        </clipPath>
-      </defs>
-      <circle cx="150" cy="20" r="4" fill="white"/>
+      <circle cx="150" cy="20" r="5" fill="white">
+        <animate id="movePt1" attributeName="cx" from="150" to="-4" dur="4" fill="freeze" begin="mouseover"/>
+      </circle>
+      <circle cx="143" cy="20" r="5" fill="white">
+        <animate attributeName="cx" from="143" to="-10" dur="4" fill="freeze" begin="movePt1.begin"/>
+      </circle>
+      <circle cx="146.5" cy="13" r="4.5" fill="white">
+        <animate attributeName="cx" from="146.5" to="-7" dur="4" fill="freeze" begin="movePt1.begin"/>
+      </circle>
       <!--Right Hill-->
       <circle cx="20" cy="100" r="45" fill="LawnGreen"/>
       <!--Center Hill-->
