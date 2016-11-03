@@ -6,12 +6,13 @@
   </head>
   <body>
     <!-- page content -->
-    <h1>SVG Animation</h1>
+    <h1>Crossing Fields</h1>
+    <p>This is a peaceful feild, watch as time passes. Click the flower and look out for </p>
     <svg width="100%" viewBox="0 0 200 90" style="background-color: white">
       <!--Sky-->
       <rect x="0" y="0" width="200" height="90" fill="LightBlue">
-        <animate id="darkSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5s" begin="2;brightSky.end"/>
-        <animate id="brightSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5s" begin="darkSky.end"/>
+        <animate id="darkSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5" begin="2;brightSky.end"/>
+        <animate id="brightSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5" begin="darkSky.end"/>
       </rect>
       <!--stars-->
       <image x="5" y="10" width="2" height="2" href="star_PNG1585.png" opacity="0">
@@ -75,6 +76,16 @@
                           dur="10s"
                           repeatCount="indefinite"/>
       </circle>
+      <!--U.F.O.--> <!--refernce to anders project-->
+      <ellipse cx="50" cy="13" rx="15" ry="7.5" fill="blue" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="4" fill="freeze" begin="6"/>
+        <animate id="ufo" attributeName="opacity" from="1" to="0" dur="1" fill="freeze" begin="click" />
+      </ellipse>
+      <ellipse cx="50" cy="20" rx="30" ry="7.5" fill="black" opacity="0">
+        <animate attributeName="opacity" from="0" to="1" dur="4" fill="freeze" begin="6"/>
+        <animate attributeName="opacity" from="1" to="0" dur="1" fill="freeze" begin="ufo.begin" />
+
+      </ellipse>
       <!--Cloud-->
       <circle cx="207" cy="16" r="5" fill="white">
         <animate id="movePt1" attributeName="cx" from="207" to="-4" dur="5" repeatCount="indefinite"/>
