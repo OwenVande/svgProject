@@ -7,10 +7,11 @@
   <body>
     <!-- page content -->
     <h1>Crossing Fields</h1>
-    <p>This is a peaceful feild, watch as time passes. Click the flower and look out for </p>
+    <p>This is a peaceful feild, watch as time passes. Click the flower and see it grow and look out for extraterrestrial visitors.
+       Maybe if you're lucky, you will see a shooting star!</p>
     <svg width="100%" viewBox="0 0 200 90" style="background-color: white">
       <!--Sky-->
-      <rect x="0" y="0" width="200" height="90" fill="LightBlue">
+      <rect x="0" y="0" width="200" height="90" fill="LightBlue" opacity=".99">
         <animate id="darkSky" attributeName="fill" from="LightBlue" to="MidnightBlue" dur="5" begin="2;brightSky.end"/>
         <animate id="brightSky" attributeName="fill" from="MidnightBlue" to="LightBlue" dur="5" begin="darkSky.end"/>
       </rect>
@@ -67,7 +68,7 @@
                           repeatCount="indefinite"/>
       </circle>
       <!--Moon-->
-      <circle cx="190" cy="57" r="13" fill="LightSlateGrey">
+      <circle cx="190" cy="57" r="13" fill="WhiteSmoke">
         <animateTransform attributeName="transform"
                           attributeType="XML"
                           type="rotate"
@@ -78,12 +79,12 @@
       </circle>
       <!--U.F.O.--> <!--refernce to anders project-->
       <ellipse cx="50" cy="13" rx="15" ry="7.5" fill="blue" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="4" fill="freeze" begin="6"/>
-        <animate id="ufo" attributeName="opacity" from="1" to="0" dur="1" fill="freeze" begin="click" />
+        <animate attributeName="opacity" from="0" to="1" dur="4" fill="freeze" begin="12"/>
+        <animate id="ufo" attributeName="opacity" from="1" to="0" dur="1" fill="freeze" begin="click;ufo2.begin" />
       </ellipse>
       <ellipse cx="50" cy="20" rx="30" ry="7.5" fill="black" opacity="0">
-        <animate attributeName="opacity" from="0" to="1" dur="4" fill="freeze" begin="6"/>
-        <animate attributeName="opacity" from="1" to="0" dur="1" fill="freeze" begin="ufo.begin" />
+        <animate attributeName="opacity" from="0" to="1" dur="4" fill="freeze" begin="12"/>
+        <animate id="ufo2" attributeName="opacity" from="1" to="0" dur="1" fill="freeze" begin="click;ufo.begin" />
 
       </ellipse>
       <!--Cloud-->
@@ -124,10 +125,16 @@
       <circle cx="180" cy="100" r="45" fill="LawnGreen"/>
       <!--Flower-->
       <rect x="19.5" y="80" width="1" height="3" fill="Green">
-        <animate attributeName="height" from="3" to="5" dur="6" begin="click" fill="freeze"/>
+        <animate attributeName="height" from="3" to="6" dur="6" begin="flower.begin" fill="freeze"/>
+        <animate attributeName="y" from="80" to="76" dur="6" begin="flower.begin" fill="freeze"/>
       </rect>
-      <circle cx="20" cy="80" r="2" fill="red"/>
-      <circle cx="20" cy="80" r="1" fill="yellow"/>
+      <circle cx="20" cy="80" r="2" fill="red">
+        <animate attributeName="cy" from="80" to="76" dur="6" begin="flower.begin" fill="freeze"/>
+      </circle>
+      <circle cx="20" cy="80" r="1" fill="yellow">
+        <animate id="flower" attributeName="cy" from="80" to="76" dur="6" begin="click" fill="freeze"/>
+      </circle>
+      <polygon points="0,0 0,3 4,0" style="fill:lime;stroke:black;stroke-width:0" />
     </svg>
   </body>
 </html>
